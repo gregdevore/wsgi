@@ -65,10 +65,6 @@ def application(environ, start_response):
         start_response(status, headers)
         return [body.encode('utf8')]
 
-    start_response(status, headers)
-    return ["<h1>No Progress Yet</h1>".encode('utf8')]
-
-
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
     srv = make_server('localhost', 8080, application)
